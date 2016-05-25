@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>delegate_event</Title>
+      <Author>Marco Velazquez</Author>
+      <Description>Delegate/Event implementation</Description>
+      <HelpUrl />
+      <SnippetTypes />
+      <Keywords />
+      <Shortcut />
+    </Header>
+    <Snippet>
+      <References />
+      <Imports />
+      <Declarations>
+        <Literal Editable="true">
+          <ID>newEvent</ID>
+          <Type></Type>
+          <ToolTip>Event Name</ToolTip>
+          <Default>newEvent</Default>
+          <Function />
+        </Literal>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <Type />
+          <ToolTip />
+          <Default>type</Default>
+          <Function />
+        </Literal>
+        <Literal Editable="true">
+          <ID>EventArgs</ID>
+          <Type />
+          <ToolTip />
+          <Default>e</Default>
+          <Function />
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Kind="" Delimiter="$"><![CDATA[       // Event Definition & Execution
+        
+        public delegate void $newEvent$EventHandler(object sender, $type$ $EventArgs$);
+        public event $newEvent$$EventHandler $newEvent$;
+       
+        private void FireEvent()
+        {
+            if($newEvent$ != null)
+            {
+                this.$newEvent$(object, $type$);
+            }  
+        }
+       
+       // Event Registration & Implementation
+        private void Register()
+        {
+           eventClass.$newEvent$ += eventClass_$newEvent$;
+
+        }
+
+        private void eventClass_$newEvent$(object sender, $type$ arg)
+        {
+
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
